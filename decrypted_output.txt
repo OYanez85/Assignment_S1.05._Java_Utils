@@ -1,0 +1,16 @@
+Exercici_1 (D) - Last modified: 2024-10-07 10:54:55
+  ListDirectory.class (F) - Last modified: 2024-10-07 11:02:15
+  ListDirectory.java (F) - Last modified: 2024-10-07 10:51:30
+Exercici_2 (D) - Last modified: 2024-10-07 10:55:07
+  DirectoryTree.class (F) - Last modified: 2024-10-07 11:02:21
+  DirectoryTree.java (F) - Last modified: 2024-10-07 10:51:44
+Exercici_3 (D) - Last modified: 2024-10-07 10:55:15
+  DirectoryTreeToFile.class (F) - Last modified: 2024-10-07 11:02:26
+  DirectoryTreeToFile.java (F) - Last modified: 2024-10-07 10:52:01
+Exercici_4 (D) - Last modified: 2024-10-07 10:55:22
+  ReadTxtFile.class (F) - Last modified: 2024-10-07 11:02:32
+  ReadTxtFile.java (F) - Last modified: 2024-10-07 10:52:18
+Exercici_5 (D) - Last modified: 2024-10-07 10:55:28
+  MyObject.class (F) - Last modified: 2024-10-07 11:02:38
+  SerializeObject.class (F) - Last modified: 2024-10-07 11:02:38
+  SerializeObject.java (F) - Last modified: 2024-10-07 10:52:35

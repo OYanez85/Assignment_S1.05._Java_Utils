@@ -3,6 +3,7 @@ package Exercise_5;
 import java.io.*;
 
 public class SerializeObject {
+
     public static void main(String[] args) {
         if (args.length != 2) {
             System.err.println("Please provide a file path and an operation (serialize/deserialize).");

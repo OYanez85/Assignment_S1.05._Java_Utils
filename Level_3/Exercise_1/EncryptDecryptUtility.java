@@ -7,7 +7,6 @@ import java.security.Key;
 import java.util.Base64;
 
 public class EncryptDecryptUtility {
-
     public static void main(String[] args) {
         if (args.length != 3) {
             System.out.println("Usage: EncryptDecryptUtility <inputFile> <outputFile> <encrypt/decrypt>");
@@ -30,7 +29,6 @@ public class EncryptDecryptUtility {
             }
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -42,11 +40,10 @@ public class EncryptDecryptUtility {
         try (FileInputStream fis = new FileInputStream(inputFile);
              FileOutputStream fos = new FileOutputStream(outputFile);
              CipherOutputStream cos = new CipherOutputStream(fos, cipher)) {
-
             byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = fis.read(buffer)) != -1) {
-                cos.write(buffer, 0, bytesRead);
+            int read;
+            while ((read = fis.read(buffer)) != -1) {
+                cos.write(buffer, 0, read);
             }
         }
     }
@@ -59,17 +56,16 @@ public class EncryptDecryptUtility {
         try (FileInputStream fis = new FileInputStream(inputFile);
              CipherInputStream cis = new CipherInputStream(fis, cipher);
              FileOutputStream fos = new FileOutputStream(outputFile)) {
-
             byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = cis.read(buffer)) != -1) {
-                fos.write(buffer, 0, bytesRead);
+            int read;
+            while ((read = cis.read(buffer)) != -1) {
+                fos.write(buffer, 0, read);
             }
         }
     }
 
-    private static Key generateKey() {
-        String keyString = "1234567890123456"; // Replace with a secure key
-        return new SecretKeySpec(keyString.getBytes(), "AES");
+    private static Key generateKey() throws Exception {
+        String keyStr = "1234567890123456"; // Example key, replace with secure key management in production
+        return new SecretKeySpec(keyStr.getBytes(), "AES");
     }
 }

@@ -3,6 +3,7 @@ package Exercise_5;
 import java.io.Serializable;
 
 public class MyObject implements Serializable {
+    private static final long serialVersionUID = 1L; // Optional, for consistency across serialization
     private String name;
     private int id;
 

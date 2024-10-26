@@ -1,0 +1,10 @@
+# Ignore .class files
+*.class
+
+# Ignore configuration files
+config.properties
+
+# Ignore output files
+*.txt
+*.key
+*.ser

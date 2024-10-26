@@ -1,3 +1,5 @@
+package Exercise_1;
+
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -7,7 +9,7 @@ import java.util.Properties;
 public class ConfigurableDirectoryTree {
     public static void main(String[] args) {
         Properties config = new Properties();
-        try (InputStream input = new FileInputStream("config.properties")) {
+        try (InputStream input = new FileInputStream("/home/oyanez85/Projects/Assignment_S1.05._Java_Utils/config/config.properties")) {
             config.load(input);
             String directoryPath = config.getProperty("directory");
             String outputPath = config.getProperty("outputFile");
@@ -17,6 +19,7 @@ public class ConfigurableDirectoryTree {
             try (FileWriter writer = new FileWriter(outputFile)) {
                 if (directory.isDirectory()) {
                     listDirectoryTreeToFile(directory, "", writer);
+                    System.out.println("Directory tree saved successfully.");
                 } else {
                     writer.write("The provided path is not a directory.");
                 }

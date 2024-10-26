@@ -1,26 +1,14 @@
+package Exercise_5;
+
 import java.io.*;
-
-class MyObject implements Serializable {
-    private String name;
-    private int id;
-
-    public MyObject(String name, int id) {
-        this.name = name;
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "MyObject{name='" + name + "', id=" + id + "}";
-    }
-}
 
 public class SerializeObject {
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.out.println("Please provide a file path and an operation (serialize/deserialize).");
+            System.err.println("Please provide a file path and an operation (serialize/deserialize).");
             return;
         }
+
         String operation = args[1];
         File file = new File(args[0]);
 
@@ -29,7 +17,7 @@ public class SerializeObject {
         } else if (operation.equalsIgnoreCase("deserialize")) {
             deserializeObject(file);
         } else {
-            System.out.println("Invalid operation. Use 'serialize' or 'deserialize'.");
+            System.err.println("Invalid operation. Use 'serialize' or 'deserialize'.");
         }
     }
 
@@ -39,7 +27,7 @@ public class SerializeObject {
             oos.writeObject(obj);
             System.out.println("Object serialized to " + file.getAbsolutePath());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error: Failed to serialize object - " + e.getMessage());
         }
     }
 
@@ -48,7 +36,7 @@ public class SerializeObject {
             MyObject obj = (MyObject) ois.readObject();
             System.out.println("Object deserialized: " + obj);
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("Error: Failed to deserialize object - " + e.getMessage());
         }
     }
 }
